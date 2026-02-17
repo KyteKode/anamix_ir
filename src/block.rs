@@ -1,6 +1,8 @@
 use crate::fields::*;
 use crate::project::Broadcast;
 
+use rgb::RGB8;
+
 #[derive(Debug)]
 pub struct Thread(Vec<Block>);
 
@@ -69,6 +71,45 @@ pub enum Block {
 
     SoundSoundsMenu(String),
 
+    // Events
     EventBroadcast(Broadcast),
     EventBroadcastAndWait(Broadcast),
+
+    EventWhenFlagClicked,
+    EventWhenKeyPressed(Key),
+    EventWhenThisSpriteClicked,
+    EventWhenBackdropSwitchesTo(Backdrop),
+    EventWhenGreaterThan(f64, WhenGreaterThanMenu),
+    EventWhenBroadcastRecieved(Broadcast),
+
+    // Control
+    ControlWait(f64),
+    ControlWaitUntil(Box<Block>),
+    ControlCreateCloneOf(Box<Block>),
+
+    ControlStop(StopOption),
+    ControlDeleteThisClone,
+
+    ControlRepeat(f64, Vec<Block>),
+    ControlForever(Vec<Block>),
+    ControlIf(Box<Block>, Vec<Block>),
+    ControlIfElse(Box<Block>, Vec<Block>, Vec<Block>),
+    ControlRepeatUntil(Box<Block>, Vec<Block>),
+    
+    ControlStartAsClone,
+
+    ControlCreateCloneOfMenu(CloneOf),
+
+    // Sensing
+    SensingAskAndWait(String),
+    SensingResetTimer,
+    SensingSetDragMode(DragMode),
+
+    SensingTouchingObject(Box<Block>),
+    SensingTouchingColor(RGB8),
+    SensingColorIsTouchingColor(RGB8, RGB8),
+    SensingKeyPressed(Box<Block>),
+    SensingMouseDown,
+
+    SensingDistanceTo(Box<Block>)
 }
