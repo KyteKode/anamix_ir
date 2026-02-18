@@ -111,5 +111,18 @@ pub enum Block {
     SensingKeyPressed(Box<Block>),
     SensingMouseDown,
 
-    SensingDistanceTo(Box<Block>)
+    SensingDistanceTo(Box<Block>),
+    SensingAnswer,
+    SensingMouseX,
+    SensingMouseY,
+    SensingTimer,
+    SensingOf(Box<Block>, SensingOfProperty),
+    SensingCurrent(CurrentMenu),
+    SensingDaysSince2000,
+    SensingUsername,
+
+    SensingTouchingObjectMenu(TouchingObjectTarget),
+    SensingDistanceToMenu(DistanceToTarget),
+    SensingKeyOptions(Key),
+    SensingOfObjectMenu(OfObjectMenu)
 }

@@ -94,3 +94,49 @@ pub enum DragMode {
     Draggable,
     NotDraggable
 }
+
+#[derive(Debug)]
+pub enum SensingOfProperty {
+    BackdropNum,
+    BackdropName,
+
+    XPosition,
+    YPosition,
+    Direction,
+    CostumeNum,
+    CostumeName,
+    Size,
+    SpriteVar(String),
+
+    Volume
+}
+
+#[derive(Debug)]
+pub enum CurrentMenu {
+    Year,
+    Month,
+    Date,
+    DayOfWeek,
+    Hour,
+    Minute,
+    Second
+}
+
+#[derive(Debug)]
+pub enum TouchingObjectTarget {
+    Mouse,
+    Edge,
+    Sprite(String)
+}
+
+#[derive(Debug)]
+pub enum DistanceToTarget {
+    Mouse,
+    Sprite(String)
+}
+
+#[derive(Debug)]
+pub enum OfObjectMenu {
+    Backdrop,
+    Sprite(String)
+}
