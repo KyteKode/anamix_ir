@@ -3,25 +3,39 @@ use crate::project::Broadcast;
 
 use rgb::RGB8;
 
+pub type BlockRef = Box<Block>;
+
 #[derive(Debug)]
 pub struct Thread(Vec<Block>);
 
 #[derive(Debug)]
+pub enum StringIn {
+    String(String),
+    Block(BlockRef),
+}
+
+#[derive(Debug)]
+pub enum NumberIn {
+    Number(f64),
+    Block(BlockRef),
+}
+
+#[derive(Debug)]
 pub enum Block {
     // Motion
-    MotionMoveSteps(f64),
-    MotionTurnRight(f64),
-    MotionTurnLeft(f64),
-    MotionGoto(Box<Block>),
-    MotionGotoXY(f64, f64),
-    MotionGlideTo(f64, Box<Block>),
-    MotionGlideSecsToXY(f64, f64, f64),
-    MotionPointInDirection(f64),
-    MotionPointTowards(Box<Block>),
-    MotionChangeXBy(f64),
-    MotionSetX(f64),
-    MotionChangeYBy(f64),
-    MotionSetY(f64),
+    MotionMoveSteps(NumberIn),
+    MotionTurnRight(NumberIn),
+    MotionTurnLeft(NumberIn),
+    MotionGoto(BlockRef),
+    MotionGotoXY(NumberIn, NumberIn),
+    MotionGlideTo(NumberIn, BlockRef),
+    MotionGlideSecsToXY(NumberIn, NumberIn, NumberIn),
+    MotionPointInDirection(NumberIn),
+    MotionPointTowards(BlockRef),
+    MotionChangeXBy(NumberIn),
+    MotionSetX(NumberIn),
+    MotionChangeYBy(NumberIn),
+    MotionSetY(NumberIn),
     MotionIfOnEdgeBounce,
     MotionSetRotationStyle(RotationStyle),
 
@@ -34,42 +48,42 @@ pub enum Block {
     MotionPointTowardsMenu(MotionTarget),
 
     // Looks
-    LooksSayForSecs(String, f64),
-    LooksSay(String),
-    LooksThinkForSecs(String, f64),
-    LooksThink(String),
-    LooksSwitchCostumeTo(Box<Block>),
-    LooksNextCostume(String),
-    LooksSwitchBackdropTo(Box<Block>),
-    LooksNextBackdrop(String),
-    LooksChangeSizeBy(f64),
-    LooksSetSizeTo(f64),
-    LooksChangeEffectBy(GraphicEffect, f64),
-    LooksSetEffectTo(GraphicEffect, f64),
+    LooksSayForSecs(StringIn, NumberIn),
+    LooksSay(StringIn),
+    LooksThinkForSecs(StringIn, NumberIn),
+    LooksThink(StringIn),
+    LooksSwitchCostumeTo(BlockRef),
+    LooksNextCostume(StringIn),
+    LooksSwitchBackdropTo(BlockRef),
+    LooksNextBackdrop(StringIn),
+    LooksChangeSizeBy(NumberIn),
+    LooksSetSizeTo(NumberIn),
+    LooksChangeEffectBy(GraphicEffect, NumberIn),
+    LooksSetEffectTo(GraphicEffect, NumberIn),
     LooksClearGraphicEffects,
     LooksShow,
     LooksHide,
     LooksGotoFrontBack(FrontBack),
-    LooksGoForwardBackwardLayers(ForwardBackward, i64),
+    LooksGoForwardBackwardLayers(ForwardBackward, NumberIn),
 
     LooksCostumeNumberName(NumberName),
     LooksBackdropNumberName(NumberName),
 
-    LooksCostume(String),
+    LooksCostume(StringIn),
     LooksBackdrops(Backdrop),
 
     // Sound
-    SoundPlayUntilDone(Box<Block>),
-    SoundPlay(Box<Block>),
+    SoundPlayUntilDone(BlockRef),
+    SoundPlay(BlockRef),
     SoundStopAllSounds,
-    SoundChangeEffectBy(SoundEffect, f64),
-    SoundSetEffectTo(SoundEffect, f64),
-    SoundChangeVolumeBy(f64),
-    SoundSetVolumeTo(f64),
+    SoundChangeEffectBy(SoundEffect, NumberIn),
+    SoundSetEffectTo(SoundEffect, NumberIn),
+    SoundChangeVolumeBy(NumberIn),
+    SoundSetVolumeTo(NumberIn),
 
     SoundVolume,
 
-    SoundSoundsMenu(String),
+    SoundSoundsMenu(StringIn),
 
     // Events
     EventBroadcast(Broadcast),
@@ -79,44 +93,44 @@ pub enum Block {
     EventWhenKeyPressed(Key),
     EventWhenThisSpriteClicked,
     EventWhenBackdropSwitchesTo(Backdrop),
-    EventWhenGreaterThan(f64, WhenGreaterThanMenu),
+    EventWhenGreaterThan(NumberIn, WhenGreaterThanMenu),
     EventWhenBroadcastRecieved(Broadcast),
 
     // Control
-    ControlWait(f64),
-    ControlWaitUntil(Box<Block>),
-    ControlCreateCloneOf(Box<Block>),
+    ControlWait(NumberIn),
+    ControlWaitUntil(BlockRef),
+    ControlCreateCloneOf(BlockRef),
 
     ControlStop(StopOption),
     ControlDeleteThisClone,
 
-    ControlRepeat(f64, Vec<Block>),
+    ControlRepeat(NumberIn, Vec<Block>),
     ControlForever(Vec<Block>),
-    ControlIf(Box<Block>, Vec<Block>),
-    ControlIfElse(Box<Block>, Vec<Block>, Vec<Block>),
-    ControlRepeatUntil(Box<Block>, Vec<Block>),
-    
+    ControlIf(BlockRef, Vec<Block>),
+    ControlIfElse(BlockRef, Vec<Block>, Vec<Block>),
+    ControlRepeatUntil(BlockRef, Vec<Block>),
+
     ControlStartAsClone,
 
     ControlCreateCloneOfMenu(CloneOf),
 
     // Sensing
-    SensingAskAndWait(String),
+    SensingAskAndWait(StringIn),
     SensingResetTimer,
     SensingSetDragMode(DragMode),
 
-    SensingTouchingObject(Box<Block>),
+    SensingTouchingObject(BlockRef),
     SensingTouchingColor(RGB8),
     SensingColorIsTouchingColor(RGB8, RGB8),
-    SensingKeyPressed(Box<Block>),
+    SensingKeyPressed(BlockRef),
     SensingMouseDown,
 
-    SensingDistanceTo(Box<Block>),
+    SensingDistanceTo(BlockRef),
     SensingAnswer,
     SensingMouseX,
     SensingMouseY,
     SensingTimer,
-    SensingOf(Box<Block>, SensingOfProperty),
+    SensingOf(BlockRef, SensingOfProperty),
     SensingCurrent(CurrentMenu),
     SensingDaysSince2000,
     SensingUsername,
@@ -124,5 +138,5 @@ pub enum Block {
     SensingTouchingObjectMenu(TouchingObjectTarget),
     SensingDistanceToMenu(DistanceToTarget),
     SensingKeyOptions(Key),
-    SensingOfObjectMenu(OfObjectMenu)
+    SensingOfObjectMenu(OfObjectMenu),
 }

@@ -58,41 +58,73 @@ pub enum SoundEffect {
 #[derive(Debug)]
 pub enum Key {
     Space,
-    UpArrow, DownArrow, LeftArrow, RightArrow,
+    UpArrow,
+    DownArrow,
+    LeftArrow,
+    RightArrow,
     Any,
-    A, B, C, D, E, F, G,
-    H, I, J, K, L, M, N,
-    O, P, Q, R, S, T,
-    U, V, W, X, Y, Z,
-    One, Two, Three, Four,
-    Five, Six, Seven,
-    Eight, Nine, Ten,
-    Enter
+    A,
+    B,
+    C,
+    D,
+    E,
+    F,
+    G,
+    H,
+    I,
+    J,
+    K,
+    L,
+    M,
+    N,
+    O,
+    P,
+    Q,
+    R,
+    S,
+    T,
+    U,
+    V,
+    W,
+    X,
+    Y,
+    Z,
+    One,
+    Two,
+    Three,
+    Four,
+    Five,
+    Six,
+    Seven,
+    Eight,
+    Nine,
+    Ten,
+    Enter,
 }
 
 #[derive(Debug)]
 pub enum WhenGreaterThanMenu {
-    Timer, Loudness
+    Timer,
+    Loudness,
 }
 
 #[derive(Debug)]
 pub enum CloneOf {
     Myself,
-    Sprite(String)
+    Sprite(String),
 }
-
 
 #[derive(Debug)]
 pub enum StopOption {
     All,
     OtherScriptsInSprite,
-    ThisSprite
+    ThisSprite,
 }
 
 #[derive(Debug)]
 pub enum DragMode {
     Draggable,
-    NotDraggable
+    NotDraggable,
 }
 
 #[derive(Debug)]
@@ -108,7 +140,7 @@ pub enum SensingOfProperty {
     Size,
     SpriteVar(String),
 
-    Volume
+    Volume,
 }
 
 #[derive(Debug)]
@@ -119,24 +151,24 @@ pub enum CurrentMenu {
     DayOfWeek,
     Hour,
     Minute,
-    Second
+    Second,
 }
 
 #[derive(Debug)]
 pub enum TouchingObjectTarget {
     Mouse,
     Edge,
-    Sprite(String)
+    Sprite(String),
 }
 
 #[derive(Debug)]
 pub enum DistanceToTarget {
     Mouse,
-    Sprite(String)
+    Sprite(String),
 }
 
 #[derive(Debug)]
 pub enum OfObjectMenu {
     Backdrop,
-    Sprite(String)
+    Sprite(String),
 }
