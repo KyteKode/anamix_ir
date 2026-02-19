@@ -172,3 +172,20 @@ pub enum OfObjectMenu {
     Backdrop,
     Sprite(String),
 }
+
+#[derive(Debug)]
+pub enum MathOperator {
+    Abs,
+    Ceiling,
+    Sqrt,
+    Sin,
+    Cos,
+    Tan,
+    Asin,
+    Acos,
+    Atan,
+    Ln,
+    Log,
+    EPower,
+    TenPower,
+}
