@@ -1,5 +1,5 @@
 use crate::fields::*;
-use crate::project::Broadcast;
+use crate::project::{Broadcast, Variable, List};
 
 use rgb::RGB8;
 
@@ -162,4 +162,26 @@ pub enum Block {
     OperatorMod(NumberIn, NumberIn),
     OperatorRound(NumberIn),
     OperatorMathOp(NumberIn, MathOperator),
+
+    // Variables
+    DataSetVarialeTo(StringIn, Variable),
+    DataChangeVariableBy(NumberIn, Variable),
+    DataShowVariable(Variable),
+    DataHideVariable(Variable),
+    ArrayVariableBlock(Variable),
+
+    // Lists
+    DataAddToList(StringIn, List),
+    DataDeleteOfList(NumberIn, List),
+    DataDeleteAllOfList(List),
+    DataInsertAtList(StringIn, NumberIn, List),
+    DataReplaceItemOfList(NumberIn, StringIn, List),
+    DataShowList(List),
+    DataHideList(List),
+
+    DataItemOfList(NumberIn, List),
+    DataItemNumOfList(StringIn, List),
+    DataLengthOfList(List),
+
+    DataListContainItem(StringIn, List)
 }
