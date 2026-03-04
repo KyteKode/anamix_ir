@@ -1,14 +1,14 @@
 pub enum KeyOption {
     Space,
     Enter,
-    
+
     Up,
     Down,
     Left,
     Right,
-    
+
     Any,
-    
+
     A,
     B,
     C,
@@ -50,5 +50,5 @@ pub enum KeyOption {
 
 pub enum WhenGreaterThanMenu {
     Loudness,
-    Timer
+    Timer,
 }

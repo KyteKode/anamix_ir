@@ -1,7 +1,7 @@
 use crate::{
-    field::{KeyOption, WhenGreaterThanMenu},
     block_in::NumberIn,
-    project::{Backdrop, Broadcast}
+    field::{KeyOption, WhenGreaterThanMenu},
+    project::{Backdrop, Broadcast},
 };
 
 pub enum Hat {
@@ -11,6 +11,6 @@ pub enum Hat {
     WhenBackdropSwitchesTo(Backdrop),
     WhenGreaterThan(NumberIn, WhenGreaterThanMenu),
     WhenBroadcastRecieved(Broadcast),
-    
-    StartAsClone
+
+    StartAsClone,
 }
