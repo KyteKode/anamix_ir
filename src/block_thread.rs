@@ -1,9 +1,9 @@
 use crate::{
     hat::Hat,
-    block::Block
+    command::Command
 };
 
-pub struct Thread {
+pub struct Thread<'a> {
     hat: Hat,
-    blocks: Vec<Block> // Placeholder, will change eventually
+    blocks: Vec<Command<'a>>
 }

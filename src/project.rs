@@ -2,9 +2,9 @@ use md5::{Digest, Md5};
 
 use crate::block_thread::Thread;
 
-pub struct Project {
-    pub stage: Stage,
-    pub sprites: Vec<Sprite>,
+pub struct Project<'a> {
+    pub stage: Stage<'a>,
+    pub sprites: Vec<Sprite<'a>>,
     pub broadcasts: Vec<Broadcast>,
 }
 
@@ -64,7 +64,7 @@ pub enum RotationStyle {
     LeftRight,
 }
 
-pub struct Sprite {
+pub struct Sprite<'a> {
     pub name: String,
 
     pub variables: Vec<Variable>,
@@ -88,7 +88,7 @@ pub struct Sprite {
     pub draggable: bool,
     pub rotation_style: RotationStyle,
 
-    pub threads: Vec<Thread>
+    pub threads: Vec<Thread<'a>>
 }
 
 pub struct Backdrop(pub Graphic);
@@ -105,7 +105,7 @@ pub enum VideoState {
     OnFlipped,
 }
 
-pub struct Stage {
+pub struct Stage<'a> {
     pub name: String,
 
     pub variables: Vec<Variable>,
@@ -122,5 +122,5 @@ pub struct Stage {
     pub video_transparency: f64,
     pub text_to_speech_languge: String,
 
-    pub threads: Vec<String>
+    pub threads: Vec<Thread<'a>>
 }

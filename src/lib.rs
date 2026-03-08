@@ -4,3 +4,6 @@ mod field;
 mod hat;
 mod project;
 mod block_thread;
+mod command;
+mod reporter;
+mod shadow;

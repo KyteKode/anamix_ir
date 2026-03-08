@@ -1,3 +1,17 @@
+use crate::project::Sprite;
+
+pub enum RotationStyle {
+    LeftRight,
+    DontRotate,
+    AllAround
+}
+
+pub enum MotionTarget<'a> {
+    Random,
+    Mouse,
+    Sprite(&'a Sprite<'a>)
+}
+
 pub enum KeyOption {
     Space,
     Enter,

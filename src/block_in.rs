@@ -1,6 +1,11 @@
-use crate::block::Block;
+use crate::reporter::Reporter;
 
 pub enum NumberIn {
     Literal(f64),
-    Block(Block),
+    Reporter(Reporter),
+}
+
+pub enum StringIn {
+    Literal(String),
+    Reporter(Reporter),
 }
