@@ -12,3 +12,6 @@ keywords = ["anamix", "ir"]
 name = "anamix_ir"
 path = "src/lib.rs"
 crate-type = ["rlib"]
+
+[dependencies]
+rgb = "0.8.53"
