@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="ALL" />
+  </component>
+  <component name="CargoProjects">
+    <cargoProject FILE="$PROJECT_DIR$/Cargo.toml">
+      <package file="$PROJECT_DIR$">
+        <feature name="default" enabled="true" />
+      </package>
+    </cargoProject>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="0e99b038-cfaf-41a5-9747-c0ef7f386db5" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Cargo.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Cargo.toml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lib.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="EmbeddingIndexingInfo">
+    <option name="cachedIndexableFilesCount" value="4" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;KyteKode&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/KyteKode/anamix_ir.git&quot;,
+    &quot;accountId&quot;: &quot;abfd4cbc-9de0-47ca-9156-e880c9a49a8a&quot;
+  }
+}</component>
+  <component name="MacroExpansionManager">
+    <option name="directoryName" value="sVuZpnEa" />
+  </component>
+  <component name="McpProjectServerCommands">
+    <commands />
+    <urls />
+  </component>
+  <component name="NextEditCompletionFeaturesState">
+    <decayedCancelled>
+      <entry key="MS100" value="1.0018997166941646" />
+      <entry key="MS500" value="1.285650082841491" />
+      <entry key="S2" value="2.5487095056549727" />
+      <entry key="S5" value="10.552969263210219" />
+      <entry key="S10" value="24.793645445282515" />
+      <entry key="S30" value="60.62241675293887" />
+      <entry key="S60" value="91.37859572374384" />
+      <entry key="M2" value="126.62582463019626" />
+      <entry key="M5" value="168.71562683719907" />
+      <entry key="M10" value="190.00223102034875" />
+      <entry key="M15" value="198.2828264950987" />
+      <entry key="M30" value="207.25821859750093" />
+      <entry key="H1" value="212.02853708019418" />
+      <entry key="H2" value="214.48850105160167" />
+      <entry key="H4" value="215.73772879504153" />
+      <entry key="D1" value="216.78870880612993" />
+      <entry key="W1" value="216.96979310279767" />
+    </decayedCancelled>
+    <decayedSelected>
+      <entry key="MS100" value="9.153846235655224E-106" />
+      <entry key="MS500" value="9.824732228754695E-22" />
+      <entry key="S2" value="5.603366635388314E-6" />
+      <entry key="S5" value="0.008475320554643593" />
+      <entry key="S10" value="0.11956484017713273" />
+      <entry key="S30" value="0.932429847166039" />
+      <entry key="S60" value="1.6513654749008808" />
+      <entry key="M2" value="2.2187394308248303" />
+      <entry key="M5" value="2.656974358135569" />
+      <entry key="M10" value="2.822928736217724" />
+      <entry key="M15" value="2.880679630706382" />
+      <entry key="M30" value="2.9396936929541035" />
+      <entry key="H1" value="2.9696834716373863" />
+      <entry key="H2" value="2.984800659191365" />
+      <entry key="H4" value="2.9923900311736" />
+      <entry key="D1" value="2.9987302390349044" />
+      <entry key="W1" value="2.999818570454242" />
+    </decayedSelected>
+    <decayedShown>
+      <entry key="MS100" value="0.9605797771151722" />
+      <entry key="MS500" value="1.257135710429747" />
+      <entry key="S2" value="2.531691461466398" />
+      <entry key="S5" value="10.544957289663781" />
+      <entry key="S10" value="24.891070376344615" />
+      <entry key="S30" value="61.52284175593895" />
+      <entry key="S60" value="93.00273874417464" />
+      <entry key="M2" value="128.82609010498996" />
+      <entry key="M5" value="171.36348044429332" />
+      <entry key="M10" value="192.82022985153418" />
+      <entry key="M15" value="201.1601292063689" />
+      <entry key="M30" value="210.19617632974382" />
+      <entry key="H1" value="214.9973402253764" />
+      <entry key="H2" value="217.4728583992239" />
+      <entry key="H4" value="218.72989637542398" />
+      <entry key="D1" value="219.78740185893403" />
+      <entry key="W1" value="219.96960635820332" />
+    </decayedShown>
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8,
+  &quot;fromUser&quot;: false
+}</component>
+  <component name="ProjectId" id="3GYtXS6la8AluFkA76lLZyUPYgm" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.MCP Project settings loaded": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.rust.reset.selective.auto.import": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
+    "git-widget-placeholder": "main",
+    "junie.onboarding.icon.badge.shown": "true",
+    "last_opened_file_path": "/home/kytekode/Programming/anamix_ir",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "org.rust.cargo.project.model.PROJECT_DISCOVERY": "true",
+    "org.rust.first.attach.projects": "true",
+    "to.speed.mode.migration.done": "true",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RustProjectSettings">
+    <option name="toolchainHomeDirectory" value="/usr/bin" />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="0e99b038-cfaf-41a5-9747-c0ef7f386db5" name="Changes" comment="" />
+      <created>1784160370315</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1784160370315</updated>
+      <workItem from="1784160372460" duration="7000" />
+      <workItem from="1784160440903" duration="418000" />
+      <workItem from="1784160863719" duration="41000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
