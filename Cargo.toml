@@ -5,4 +5,5 @@ edition = "2024"
 
 [dependencies]
 either = "1.16.0"
-id-arena = "2.3.0"
+id-arena = { version = "2.3.0" }
+serde = { version = "1.0.228", features = ["derive"] }
