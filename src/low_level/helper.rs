@@ -1,19 +1,19 @@
 use id_arena::Id;
 use serde::{
     Serialize,
-    ser::{SerializeSeq, SerializeMap}
+    ser::{SerializeMap, SerializeSeq},
 };
 
-use crate::low_level::block::LLBlock;
+use super::block::LLBlock;
 
-pub fn id_string(id: &Id<LLBlock>) -> String {
+pub(crate) fn id_string(id: &Id<LLBlock>) -> String {
     format!("b{:05}", id.index())
 }
 
-pub fn serialize_element_if_some<S, T>(seq: &mut S, option: &Option<T>) -> Result<(), S::Error>
+pub(crate) fn serialize_element_if_some<S, T>(seq: &mut S, option: &Option<T>) -> Result<(), S::Error>
 where
     S: SerializeSeq,
-    T: Serialize
+    T: Serialize,
 {
     if let Some(data) = option {
         seq.serialize_element(data)?;
@@ -21,10 +21,14 @@ where
     Ok(())
 }
 
-pub fn serialize_entry_if_some<S, T>(map: &mut S, key: &str, option: &Option<T>) -> Result<(), S::Error>
+pub(crate) fn serialize_entry_if_some<S, T>(
+    map: &mut S,
+    key: &str,
+    option: &Option<T>,
+) -> Result<(), S::Error>
 where
     S: SerializeMap,
-    T: Serialize
+    T: Serialize,
 {
     if let Some(data) = option {
         map.serialize_entry(key, data)?;
