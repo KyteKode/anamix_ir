@@ -1,154 +1,97 @@
 use either::Either;
 use id_arena::Id;
-use serde::ser::{Serialize, SerializeMap, SerializeSeq, Serializer};
+use serde::{Serialize, Serializer};
 
+use super::helper::id_string;
 use std::collections::BTreeMap;
 
-use super::helper::{id_string, serialize_entry_if_some, serialize_element_if_some};
-
-#[derive(Clone, Debug)]
+#[derive(Clone, Debug, Serialize)]
+#[serde(untagged)]
 pub enum LLBlock {
     Object(LLObjectBlock),
     Array(LLArrayBlock),
 }
 
-impl Serialize for LLBlock {
-    fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
-    where
-        S: Serializer,
-    {
-        Ok(match self {
-            Self::Object(object) => object.serialize(serializer)?,
-            Self::Array(array) => array.serialize(serializer)?,
-        })
-    }
-}
-
-#[derive(Clone, Debug)]
+#[derive(Clone, Debug, Serialize)]
+#[serde(rename_all = "camelCase")]
 pub struct LLObjectBlock {
     pub opcode: String,
+
+    #[serde(serialize_with = "serialize_optional_id")]
     pub next: Option<Id<LLBlock>>,
+
+    #[serde(serialize_with = "serialize_optional_id")]
     pub parent: Option<Id<LLBlock>>,
+
     pub inputs: BTreeMap<String, LLInput>,
     pub fields: BTreeMap<String, LLField>,
+
     pub shadow: bool,
     pub top_level: bool,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
     pub x: Option<f64>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
     pub y: Option<f64>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
     pub mutation: Option<BTreeMap<String, String>>,
 }
 
-impl Serialize for LLObjectBlock {
-    fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
-    where
-        S: Serializer,
-    {
-        let mut map = serializer.serialize_map(None)?;
-
-        map.serialize_entry("opcode", &self.opcode)?;
-
-        let next: &Option<String> = &self.next.map(|id| id_string(&id));
-        map.serialize_entry("next", next)?;
-
-        let parent: &Option<String> = &self.parent.map(|id| id_string(&id));
-        map.serialize_entry("parent", parent)?;
-
-        map.serialize_entry("inputs", &self.inputs)?;
-        map.serialize_entry("fields", &self.fields)?;
-
-        map.serialize_entry("shadow", &self.shadow)?;
-        map.serialize_entry("topLevel", &self.top_level)?;
-
-        serialize_entry_if_some(&mut map, "x", &self.x)?;
-        serialize_entry_if_some(&mut map, "y", &self.y)?;
-
-        serialize_entry_if_some(&mut map, "mutations", &self.mutation)?;
-
-        map.end()
-    }
-}
-
-#[derive(Clone, Debug)]
+#[derive(Clone, Debug, Serialize)]
 pub struct LLArrayBlock(
     u8,
-    Either<String, f64>,
-    Option<String>,
-    Option<f64>,
-    Option<f64>,
+    #[serde(serialize_with = "serialize_either")] Either<String, f64>,
+    #[serde(skip_serializing_if = "Option::is_none")] Option<String>,
+    #[serde(skip_serializing_if = "Option::is_none")] Option<f64>,
+    #[serde(skip_serializing_if = "Option::is_none")] Option<f64>,
 );
 
-impl Serialize for LLArrayBlock {
-    fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
-    where
-        S: Serializer,
-    {
-        let mut seq = serializer.serialize_seq(None)?;
-
-        seq.serialize_element(&self.0)?;
-
-        if let Either::Left(data) = &self.1 {
-            seq.serialize_element(data)?;
-        } else if let Either::Right(data) = &self.1 {
-            seq.serialize_element(data)?;
-        }
-
-        serialize_element_if_some(&mut seq, &self.2)?;
-        serialize_element_if_some(&mut seq, &self.3)?;
-        serialize_element_if_some(&mut seq, &self.4)?;
-
-        seq.end()
-    }
-}
-
-#[derive(Clone, Debug)]
+#[derive(Clone, Debug, Serialize)]
+#[serde(untagged)]
 pub enum LLInputBlock {
+    #[serde(serialize_with = "serialize_id")]
     ID(Id<LLBlock>),
+
     Array(LLArrayBlock),
 }
 
-impl Serialize for LLInputBlock {
-    fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
-    where
-        S: Serializer,
-    {
-        Ok(match self {
-            Self::ID(id) => serializer.serialize_str(&id_string(id))?,
-            Self::Array(array) => array.serialize(serializer)?,
-        })
-    }
+#[derive(Clone, Debug, Serialize)]
+pub struct LLInput(
+    u8,
+    LLInputBlock,
+    #[serde(skip_serializing_if = "Option::is_none")] Option<LLInputBlock>,
+);
+
+#[derive(Clone, Debug, Serialize)]
+pub struct LLField(
+    String,
+    #[serde(skip_serializing_if = "Option::is_none")] Option<String>,
+);
+
+fn serialize_id<S>(id: &Id<LLBlock>, serializer: S) -> Result<S::Ok, S::Error>
+where
+    S: Serializer,
+{
+    id_string(&id).serialize(serializer)
 }
 
-#[derive(Clone, Debug)]
-pub struct LLInput(u8, LLInputBlock, Option<LLInputBlock>);
-impl Serialize for LLInput {
-    fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
-    where
-        S: Serializer,
-    {
-        let mut seq = serializer.serialize_seq(None)?;
-
-        seq.serialize_element(&self.0)?;
-        seq.serialize_element(&self.1)?;
-        serialize_element_if_some(&mut seq, &self.2)?;
-
-        seq.end()
-    }
+fn serialize_optional_id<S>(id: &Option<Id<LLBlock>>, serializer: S) -> Result<S::Ok, S::Error>
+where
+    S: Serializer,
+{
+    id.map(|id| id_string(&id)).serialize(serializer)
 }
 
-#[derive(Clone, Debug)]
-pub struct LLField(String, Option<String>);
-impl Serialize for LLField {
-    fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
-    where
-        S: Serializer,
-    {
-        let mut seq = serializer.serialize_seq(None)?;
-
-        seq.serialize_element(&self.0)?;
-        serialize_element_if_some(&mut seq, &self.1)?;
-
-        seq.end()
+fn serialize_either<S>(either: &Either<String, f64>, serializer: S) -> Result<S::Ok, S::Error>
+where
+    S: Serializer,
+{
+    if let Either::Left(data) = either {
+        return data.serialize(serializer);
+    } else if let Either::Right(data) = either {
+        return data.serialize(serializer);
     }
+    unreachable!();
 }
-
-
