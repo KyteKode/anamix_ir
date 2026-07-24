@@ -41,11 +41,11 @@ pub struct LLObjectBlock {
 
 #[derive(Clone, Debug, Serialize)]
 pub struct LLArrayBlock(
-    u8,
-    #[serde(serialize_with = "serialize_either")] Either<String, f64>,
-    #[serde(skip_serializing_if = "Option::is_none")] Option<String>,
-    #[serde(skip_serializing_if = "Option::is_none")] Option<f64>,
-    #[serde(skip_serializing_if = "Option::is_none")] Option<f64>,
+    pub u8,
+    #[serde(serialize_with = "serialize_either")] pub Either<String, f64>,
+    #[serde(skip_serializing_if = "Option::is_none")] pub Option<String>,
+    #[serde(skip_serializing_if = "Option::is_none")] pub Option<f64>,
+    #[serde(skip_serializing_if = "Option::is_none")] pub Option<f64>,
 );
 
 #[derive(Clone, Debug, Serialize)]
@@ -59,22 +59,22 @@ pub enum LLInputBlock {
 
 #[derive(Clone, Debug, Serialize)]
 pub struct LLInput(
-    u8,
-    LLInputBlock,
-    #[serde(skip_serializing_if = "Option::is_none")] Option<LLInputBlock>,
+    pub u8,
+    pub LLInputBlock,
+    #[serde(skip_serializing_if = "Option::is_none")] pub Option<LLInputBlock>,
 );
 
 #[derive(Clone, Debug, Serialize)]
 pub struct LLField(
-    String,
-    #[serde(skip_serializing_if = "Option::is_none")] Option<String>,
+    pub String,
+    pub Option<String>,
 );
 
 fn serialize_id<S>(id: &Id<LLBlock>, serializer: S) -> Result<S::Ok, S::Error>
 where
     S: Serializer,
 {
-    id_string(&id).serialize(serializer)
+    id_string(id).serialize(serializer)
 }
 
 fn serialize_optional_id<S>(id: &Option<Id<LLBlock>>, serializer: S) -> Result<S::Ok, S::Error>

@@ -12,13 +12,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0e99b038-cfaf-41a5-9747-c0ef7f386db5" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/examples/anamix_ir.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/examples/ll_target_test.rs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/low_level/compile.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/anamix_ir.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/anamix_ir.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Cargo.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Cargo.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Cargo.toml" beforeDir="false" afterPath="$PROJECT_DIR$/Cargo.toml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/low_level/asset.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/low_level/asset.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/low_level.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/low_level.rs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/low_level/block.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/low_level/block.rs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/low_level/helper.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/low_level/helper.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/low_level/project.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/low_level/project.rs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/low_level/target.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/low_level/target.rs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -27,7 +31,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="EmbeddingIndexingInfo">
-    <option name="cachedIndexableFilesCount" value="10" />
+    <option name="cachedIndexableFilesCount" value="17" />
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="RsBuildProfile:dev" />
   <component name="FileTemplateManagerImpl">
@@ -46,12 +50,12 @@
     &quot;assignee&quot;: &quot;KyteKode&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/KyteKode/anamix_ir.git",
-    "accountId": "adfd5bd0-ae3b-4a7f-adc1-5474fa5d1950"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/KyteKode/anamix_ir.git&quot;,
+    &quot;accountId&quot;: &quot;abfd4cbc-9de0-47ca-9156-e880c9a49a8a&quot;
   }
-}]]></component>
+}</component>
   <component name="MacroExpansionManager">
     <option name="directoryName" value="sVuZpnEa" />
   </component>
@@ -61,61 +65,61 @@
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.0000000252349996" />
-      <entry key="MS500" value="1.0335798638463514" />
-      <entry key="S2" value="2.0604112210510577" />
-      <entry key="S5" value="3.97992715330135" />
-      <entry key="S10" value="5.948449063858762" />
-      <entry key="S30" value="10.758952882679758" />
-      <entry key="S60" value="15.586394492910795" />
-      <entry key="M2" value="29.532916332662563" />
-      <entry key="M5" value="82.07863840536795" />
-      <entry key="M10" value="162.93102364433616" />
-      <entry key="M15" value="234.60776931507715" />
-      <entry key="M30" value="414.296140535324" />
-      <entry key="H1" value="652.4055935879769" />
-      <entry key="H2" value="876.903190092613" />
-      <entry key="H4" value="1037.2116649542388" />
-      <entry key="D1" value="1205.7012612673261" />
-      <entry key="W1" value="1238.425703379933" />
+      <entry key="MS100" value="1.0023388255949588" />
+      <entry key="MS500" value="1.297714212341242" />
+      <entry key="S2" value="1.7386747051462055" />
+      <entry key="S5" value="1.8979893136763242" />
+      <entry key="S10" value="2.102581387638449" />
+      <entry key="S30" value="3.1356062602892343" />
+      <entry key="S60" value="4.346022095222465" />
+      <entry key="M2" value="6.186373576398644" />
+      <entry key="M5" value="16.88984650564057" />
+      <entry key="M10" value="51.83474867082574" />
+      <entry key="M15" value="96.84910379955106" />
+      <entry key="M30" value="259.21259545201286" />
+      <entry key="H1" value="588.3849404486238" />
+      <entry key="H2" value="1113.7592699573397" />
+      <entry key="H4" value="1700.975300239598" />
+      <entry key="D1" value="2587.770362077779" />
+      <entry key="W1" value="2798.6897649207026" />
     </decayedCancelled>
     <decayedSelected>
-      <entry key="MS100" value="0.0" />
-      <entry key="MS500" value="0.0" />
-      <entry key="S2" value="4.7977773002207496E-98" />
-      <entry key="S5" value="1.2265081410460312E-39" />
-      <entry key="S10" value="4.109275036640218E-20" />
-      <entry key="S30" value="5.138638161058695E-7" />
-      <entry key="S60" value="0.0010046428353692738" />
-      <entry key="M2" value="0.04480738940109215" />
-      <entry key="M5" value="0.4690707686737776" />
-      <entry key="M10" value="1.2250319230459012" />
-      <entry key="M15" value="1.867297284684413" />
-      <entry key="M30" value="3.3741579143366516" />
-      <entry key="H1" value="5.292549559289929" />
-      <entry key="H2" value="7.082043382594688" />
-      <entry key="H4" value="8.356745790154905" />
-      <entry key="D1" value="9.695680975887734" />
-      <entry key="W1" value="9.955706992170747" />
+      <entry key="MS100" value="7.830922973631153E-67" />
+      <entry key="MS500" value="6.008451922306096E-14" />
+      <entry key="S2" value="4.950974022412249E-4" />
+      <entry key="S5" value="0.04762952594811779" />
+      <entry key="S10" value="0.21824189778344072" />
+      <entry key="S30" value="0.6020686906157097" />
+      <entry key="S60" value="0.775930943901166" />
+      <entry key="M2" value="0.8816873049619636" />
+      <entry key="M5" value="1.1962830186233755" />
+      <entry key="M10" value="2.8861596780667527" />
+      <entry key="M15" value="5.102348932580577" />
+      <entry key="M30" value="11.214622429050046" />
+      <entry key="H1" value="19.581769999671295" />
+      <entry key="H2" value="29.028994052859517" />
+      <entry key="H4" value="37.60563872840741" />
+      <entry key="D1" value="48.99890246441039" />
+      <entry key="W1" value="51.55280839611893" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="2.656727925564195E-7" />
-      <entry key="MS500" value="0.0671201353569278" />
-      <entry key="S2" value="1.3942705926767078" />
-      <entry key="S5" value="3.551090258487527" />
-      <entry key="S10" value="5.670998238863736" />
-      <entry key="S30" value="10.637454413610081" />
-      <entry key="S60" value="15.513126500629191" />
-      <entry key="M2" value="29.51482459667071" />
-      <entry key="M5" value="82.48345548345415" />
-      <entry key="M10" value="164.09420043773562" />
-      <entry key="M15" value="236.41654835717551" />
-      <entry key="M30" value="417.6221850919643" />
-      <entry key="H1" value="657.664164166127" />
-      <entry key="H2" value="883.9642847984983" />
-      <entry key="H4" value="1045.5566481413416" />
-      <entry key="D1" value="1215.3947691519154" />
-      <entry key="W1" value="1248.3810942103378" />
+      <entry key="MS100" value="0.01660971030059823" />
+      <entry key="MS500" value="0.5966040641133254" />
+      <entry key="S2" value="1.443617478154445" />
+      <entry key="S5" value="1.793611773460176" />
+      <entry key="S10" value="2.2010302320350172" />
+      <entry key="S30" value="3.65616672384735" />
+      <entry key="S60" value="5.0669186876050105" />
+      <entry key="M2" value="7.033120590011476" />
+      <entry key="M5" value="18.0622048595567" />
+      <entry key="M10" value="54.69404485479433" />
+      <entry key="M15" value="101.9211332524241" />
+      <entry key="M30" value="270.39177874364526" />
+      <entry key="H1" value="607.929651022415" />
+      <entry key="H2" value="1142.7551312676708" />
+      <entry key="H4" value="1738.556713920611" />
+      <entry key="D1" value="2636.7634101181" />
+      <entry key="W1" value="2850.2416772794627" />
     </decayedShown>
   </component>
   <component name="ProblemsViewState">
@@ -133,6 +137,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Cargo.Check.executor": "Run",
+    "CidrDebugProfileConversion": "true",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.MCP Project settings loaded": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -146,18 +151,27 @@
     "junie.onboarding.icon.badge.shown": "true",
     "last_opened_file_path": "/home/kytekode/Programming/anamix_ir",
     "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.jshint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.jshint": "",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "org.rust.cargo.project.model.PROJECT_DISCOVERY": "true",
     "org.rust.cargo.project.model.impl.CargoExternalSystemProjectAware.subscribe.first.balloon": "",
     "org.rust.first.attach.projects": "true",
-    "settings.editor.selected.configurable": "editor.preferences.fonts.default",
+    "settings.editor.selected.configurable": "preferences.customizations",
     "to.speed.mode.migration.done": "true",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/examples/" />
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/examples" />
+    </key>
+  </component>
   <component name="RunManager" selected="Cargo.Check">
     <configuration name="Check" type="CargoCommandRunConfiguration" factoryName="Cargo Command">
       <option name="command" value="check" />
@@ -200,7 +214,7 @@
     </list>
   </component>
   <component name="RustProjectSettings">
-    <option name="toolchainHomeDirectory" value="$USER_HOME$/.cargo/bin" />
+    <option name="toolchainHomeDirectory" value="/usr/bin" />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -220,5 +234,9 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

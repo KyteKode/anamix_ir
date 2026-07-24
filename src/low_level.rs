@@ -1,5 +1,7 @@
-mod asset;
-mod block;
-mod helper;
+pub mod asset;
+pub mod block;
 pub mod project;
-mod target;
+pub mod target;
+
+mod helper;
+mod compile;
