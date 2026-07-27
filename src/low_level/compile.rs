@@ -6,6 +6,7 @@ use std::{
     fs::{self, File},
     io::Write,
     collections::HashSet,
+    path::Path
 };
 
 const ALLOWED_EXTENSIONS: [&str; 9] = [
@@ -27,7 +28,14 @@ impl CompileData {
             "project.json"
         };
 
-        let sb3 = File::create(self.name.clone())?;
+        let build_ext = if self.sprite {
+            ".sprite3"
+        } else {
+            ".sb3"
+        };
+
+        fs::create_dir_all("build")?;
+        let sb3 = File::create(Path::new("build").join(format!("{}{}", &self.name, build_ext)))?;
         let mut sb3_writer = ZipWriter::new(sb3);
 
         let options =

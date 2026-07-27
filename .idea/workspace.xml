@@ -12,17 +12,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0e99b038-cfaf-41a5-9747-c0ef7f386db5" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/examples/anamix_ir.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/examples/ll_target_test.rs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/low_level/compile.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/anamix_ir.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/anamix_ir.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cargo.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Cargo.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cargo.toml" beforeDir="false" afterPath="$PROJECT_DIR$/Cargo.toml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/low_level.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/low_level.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/low_level/block.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/low_level/block.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/low_level/helper.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/low_level/helper.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/examples/ll_target_test.rs" beforeDir="false" afterPath="$PROJECT_DIR$/examples/ll_target_test.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/low_level/compile.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/low_level/compile.rs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/low_level/target.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/low_level/target.rs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -31,7 +25,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="EmbeddingIndexingInfo">
-    <option name="cachedIndexableFilesCount" value="17" />
+    <option name="cachedIndexableFilesCount" value="19" />
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="RsBuildProfile:dev" />
   <component name="FileTemplateManagerImpl">
@@ -65,61 +59,61 @@
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.0023388255949588" />
-      <entry key="MS500" value="1.297714212341242" />
-      <entry key="S2" value="1.7386747051462055" />
-      <entry key="S5" value="1.8979893136763242" />
-      <entry key="S10" value="2.102581387638449" />
-      <entry key="S30" value="3.1356062602892343" />
-      <entry key="S60" value="4.346022095222465" />
-      <entry key="M2" value="6.186373576398644" />
-      <entry key="M5" value="16.88984650564057" />
-      <entry key="M10" value="51.83474867082574" />
-      <entry key="M15" value="96.84910379955106" />
-      <entry key="M30" value="259.21259545201286" />
-      <entry key="H1" value="588.3849404486238" />
-      <entry key="H2" value="1113.7592699573397" />
-      <entry key="H4" value="1700.975300239598" />
-      <entry key="D1" value="2587.770362077779" />
-      <entry key="W1" value="2798.6897649207026" />
+      <entry key="MS100" value="1.0000000458039247" />
+      <entry key="MS500" value="1.0406403043943417" />
+      <entry key="S2" value="1.9356970403973695" />
+      <entry key="S5" value="3.29847665639594" />
+      <entry key="S10" value="4.916982429106085" />
+      <entry key="S30" value="8.864028510953213" />
+      <entry key="S60" value="16.48669545548344" />
+      <entry key="M2" value="35.80059953328456" />
+      <entry key="M5" value="79.89437368332699" />
+      <entry key="M10" value="131.85922232387125" />
+      <entry key="M15" value="173.5684194055907" />
+      <entry key="M30" value="299.17798767028137" />
+      <entry key="H1" value="587.0555995810489" />
+      <entry key="H2" value="1115.3852887428293" />
+      <entry key="H4" value="1766.5543733075372" />
+      <entry key="D1" value="2831.9590763612555" />
+      <entry key="W1" value="3096.7601508597563" />
     </decayedCancelled>
     <decayedSelected>
-      <entry key="MS100" value="7.830922973631153E-67" />
-      <entry key="MS500" value="6.008451922306096E-14" />
-      <entry key="S2" value="4.950974022412249E-4" />
-      <entry key="S5" value="0.04762952594811779" />
-      <entry key="S10" value="0.21824189778344072" />
-      <entry key="S30" value="0.6020686906157097" />
-      <entry key="S60" value="0.775930943901166" />
-      <entry key="M2" value="0.8816873049619636" />
-      <entry key="M5" value="1.1962830186233755" />
-      <entry key="M10" value="2.8861596780667527" />
-      <entry key="M15" value="5.102348932580577" />
-      <entry key="M30" value="11.214622429050046" />
-      <entry key="H1" value="19.581769999671295" />
-      <entry key="H2" value="29.028994052859517" />
-      <entry key="H4" value="37.60563872840741" />
-      <entry key="D1" value="48.99890246441039" />
-      <entry key="W1" value="51.55280839611893" />
+      <entry key="MS100" value="2.5254407792407956E-76" />
+      <entry key="MS500" value="7.59394483200258E-16" />
+      <entry key="S2" value="1.6600335272038224E-4" />
+      <entry key="S5" value="0.030764279175551284" />
+      <entry key="S10" value="0.17539748907995031" />
+      <entry key="S30" value="0.5597676428584792" />
+      <entry key="S60" value="0.7481797383223567" />
+      <entry key="M2" value="0.8668499175967523" />
+      <entry key="M5" value="1.0260114014588342" />
+      <entry key="M10" value="1.347613054715934" />
+      <entry key="M15" value="1.9241101781513728" />
+      <entry key="M30" value="5.194863820307382" />
+      <entry key="H1" value="12.81813089938475" />
+      <entry key="H2" value="23.667044194108296" />
+      <entry key="H4" value="34.51305702663382" />
+      <entry key="D1" value="49.828773393592705" />
+      <entry key="W1" value="53.37519663309292" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="0.01660971030059823" />
-      <entry key="MS500" value="0.5966040641133254" />
-      <entry key="S2" value="1.443617478154445" />
-      <entry key="S5" value="1.793611773460176" />
-      <entry key="S10" value="2.2010302320350172" />
-      <entry key="S30" value="3.65616672384735" />
-      <entry key="S60" value="5.0669186876050105" />
-      <entry key="M2" value="7.033120590011476" />
-      <entry key="M5" value="18.0622048595567" />
-      <entry key="M10" value="54.69404485479433" />
-      <entry key="M15" value="101.9211332524241" />
-      <entry key="M30" value="270.39177874364526" />
-      <entry key="H1" value="607.929651022415" />
-      <entry key="H2" value="1142.7551312676708" />
-      <entry key="H4" value="1738.556713920611" />
-      <entry key="D1" value="2636.7634101181" />
-      <entry key="W1" value="2850.2416772794627" />
+      <entry key="MS100" value="0.0642571145117243" />
+      <entry key="MS500" value="0.5936060109175132" />
+      <entry key="S2" value="1.625140251853194" />
+      <entry key="S5" value="3.0743219480291266" />
+      <entry key="S10" value="4.865020750246637" />
+      <entry key="S30" value="9.268038211289362" />
+      <entry key="S60" value="17.13228658524467" />
+      <entry key="M2" value="36.60482688848412" />
+      <entry key="M5" value="80.883211968037" />
+      <entry key="M10" value="133.1773200961573" />
+      <entry key="M15" value="175.465488718457" />
+      <entry key="M30" value="304.3455732950362" />
+      <entry key="H1" value="599.8432999371931" />
+      <entry key="H2" value="1139.0221987171044" />
+      <entry key="H4" value="1801.0436684619592" />
+      <entry key="D1" value="2881.7816490886003" />
+      <entry key="W1" value="3150.134384698845" />
     </decayedShown>
   </component>
   <component name="ProblemsViewState">
@@ -160,7 +154,7 @@
     "org.rust.cargo.project.model.PROJECT_DISCOVERY": "true",
     "org.rust.cargo.project.model.impl.CargoExternalSystemProjectAware.subscribe.first.balloon": "",
     "org.rust.first.attach.projects": "true",
-    "settings.editor.selected.configurable": "preferences.customizations",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
     "to.speed.mode.migration.done": "true",
     "vue.rearranger.settings.migration": "true"
   }

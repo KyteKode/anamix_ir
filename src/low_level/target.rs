@@ -1,18 +1,15 @@
+use anyhow::Result;
 use id_arena::Arena;
 use serde::{Serialize, Serializer};
-use anyhow::Result;
 
-use std::{collections::BTreeMap, path::PathBuf, fs::File};
+use std::{collections::BTreeMap, fs::File, path::PathBuf};
 
 use super::{
     asset::{LLCostume, LLSound},
     block::LLBlock,
-    helper::id_string,
     compile::CompileData,
+    helper::id_string,
 };
-
-type Variable = (String, String, bool);
-type List = (String, Vec<String>);
 
 #[derive(Debug, Serialize)]
 #[serde(rename_all = "camelCase")]
@@ -21,8 +18,8 @@ pub struct LLTarget {
 
     pub name: String,
 
-    pub variables: BTreeMap<String, Variable>,
-    pub lists: BTreeMap<String, List>,
+    pub variables: BTreeMap<String, LLVariable>,
+    pub lists: BTreeMap<String, LLList>,
     pub broadcasts: BTreeMap<String, String>,
 
     #[serde(serialize_with = "serialize_blocks")]
@@ -63,6 +60,15 @@ pub struct LLTarget {
     pub rotation_style: Option<String>,
 }
 
+type LLList = (String, Vec<String>);
+
+#[derive(Debug, Serialize)]
+pub struct LLVariable(
+    pub String,
+    pub String,
+    #[serde(skip_serializing_if = "std::ops::Not::not")] pub bool,
+);
+
 fn serialize_blocks<S>(blocks: &Arena<LLBlock>, serializer: S) -> Result<S::Ok, S::Error>
 where
     S: Serializer,
@@ -91,8 +97,7 @@ impl LLTarget {
         files
     }
 
-    pub fn compile(&self, name: String) -> Result<File>
-    {
+    pub fn compile(&self, name: String) -> Result<File> {
         let json = serde_json::to_string_pretty(&self)?;
         let compile_data = CompileData {
             json,

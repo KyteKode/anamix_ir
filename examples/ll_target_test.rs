@@ -1,15 +1,12 @@
 use either::Either;
 use id_arena::Arena;
 
-use std::{
-    collections::BTreeMap,
-    path::PathBuf,
-};
+use std::{collections::BTreeMap, path::PathBuf};
 
 use anamix_ir::low_level::{
-    block::{LLArrayBlock, LLBlock, LLInput, LLInputBlock, LLObjectBlock, LLField},
+    asset::{LLAsset, LLCostume},
+    block::{LLArrayBlock, LLBlock, LLField, LLInput, LLInputBlock, LLObjectBlock},
     target::LLTarget,
-    asset::{LLAsset, LLCostume}
 };
 
 fn main() {
@@ -147,15 +144,10 @@ fn main() {
         parent: Some(say),
 
         inputs: BTreeMap::new(),
-        fields: BTreeMap::from([
-            (
-                String::from("STOP_OPTION"),
-                LLField(
-                    String::from("other scripts in sprite"),
-                    None
-                )
-            )
-        ]),
+        fields: BTreeMap::from([(
+            String::from("STOP_OPTION"),
+            LLField(String::from("other scripts in sprite"), None),
+        )]),
 
         shadow: false,
         top_level: false,
@@ -170,65 +162,28 @@ fn main() {
         obj.next = Some(stop);
     }
 
-
-
-
-
     let target = LLTarget {
         is_stage: false,
 
         name: String::from("LLTargetTest"),
 
-        variables: BTreeMap::new(),/*BTreeMap::from([
-            ("v0", ("var0 string", "Hello, world!", false)),
-            ("v1", ("var1 number", "32768", true)),
-            ("v2", ("var2 bool", "true", true)),
-        ])
-        .into_iter()
-        .map(|(key, (name, value, cloud))| {
-            (
-                key.to_string(),
-                (name.to_string(), value.to_string(), cloud),
-            )
-        })
-        .collect(),*/
-
-        lists: BTreeMap::new(), /*BTreeMap::from([
-            ("l0", ("list0", vec!["Hello,", "world!"])),
-            ("l1", ("list1", vec!["1", "2", "3", "4", "5"])),
-        ])
-        .into_iter()
-        .map(|(key, (name, values))| {
-            (
-                key.to_string(),
-                (
-                    name.to_string(),
-                    values.into_iter().map(|v| v.to_string()).collect(),
-                ),
-            )
-        })
-        .collect(),*/
-
-        broadcasts: BTreeMap::new(), /*BTreeMap::from([("b0", "broadcast0"), ("l1", "broadcast1")])
-            .into_iter()
-            .map(|(key, value)| (key.to_string(), value.to_string()))
-            .collect(),*/
+        variables: BTreeMap::new(),
+        lists: BTreeMap::new(),
+        broadcasts: BTreeMap::new(),
 
         blocks,
 
         current_costume: 0,
-        costumes: vec![
-            LLCostume {
-                asset_data: LLAsset {
-                    name: String::from("Anamix IR"),
-                    data_format: String::from("svg"),
-                    asset: PathBuf::from("examples/anamix_ir.svg")
-                },
-                bitmap_resolution: Some(2.0),
-                rotation_center_x: Some(55.35),
-                rotation_center_y: Some(43.875)
-            }
-        ],
+        costumes: vec![LLCostume {
+            asset_data: LLAsset {
+                name: String::from("Anamix IR"),
+                data_format: String::from("svg"),
+                asset: PathBuf::from("examples/anamix_ir.svg"),
+            },
+            bitmap_resolution: Some(2.0),
+            rotation_center_x: Some(55.35),
+            rotation_center_y: Some(43.875),
+        }],
         sounds: Vec::new(),
 
         layer_order: None,
@@ -246,7 +201,7 @@ fn main() {
         size: Some(100.0),
         direction: Some(90.0),
         draggable: Some(false),
-        rotation_style: Some(String::from("all around"))
+        rotation_style: Some(String::from("all around")),
     };
 
     target.compile(String::from("LL Target Test")).unwrap();
