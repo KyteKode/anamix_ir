@@ -13,11 +13,17 @@
   <component name="ChangeListManager">
     <list default="true" id="0e99b038-cfaf-41a5-9747-c0ef7f386db5" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/.idea/anamix_ir.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/anamix_ir.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/examples/ll_target_test.rs" beforeDir="false" afterPath="$PROJECT_DIR$/examples/ll_target_test.rs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/low_level/compile.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/low_level/compile.rs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/low_level/target.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/low_level/target.rs" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/examples/ll_target_test.rs" beforeDir="false" afterPath="$PROJECT_DIR$/examples/ll_target_test.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/low_level/compile.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/low_level/compile.rs" afterDir="false" />
+>>>>>>> c7d18b9 (Made MD5 hashes match and made SB3 output into a project folder)
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -154,7 +160,11 @@
     "org.rust.cargo.project.model.PROJECT_DISCOVERY": "true",
     "org.rust.cargo.project.model.impl.CargoExternalSystemProjectAware.subscribe.first.balloon": "",
     "org.rust.first.attach.projects": "true",
+<<<<<<< HEAD
     "settings.editor.selected.configurable": "preferences.pluginManager",
+=======
+    "settings.editor.selected.configurable": "language.rust",
+>>>>>>> c7d18b9 (Made MD5 hashes match and made SB3 output into a project folder)
     "to.speed.mode.migration.done": "true",
     "vue.rearranger.settings.migration": "true"
   }
@@ -208,7 +218,7 @@
     </list>
   </component>
   <component name="RustProjectSettings">
-    <option name="toolchainHomeDirectory" value="/usr/bin" />
+    <option name="toolchainHomeDirectory" value="$USER_HOME$/.cargo/bin" />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
