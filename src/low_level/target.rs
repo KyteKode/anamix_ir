@@ -2,7 +2,7 @@ use anyhow::Result;
 use id_arena::Arena;
 use serde::{Serialize, Serializer};
 
-use std::{collections::BTreeMap, fs::File, path::PathBuf};
+use std::{collections::HashMap, fs::File, path::PathBuf};
 
 use super::{
     asset::{LLCostume, LLSound},
@@ -18,9 +18,9 @@ pub struct LLTarget {
 
     pub name: String,
 
-    pub variables: BTreeMap<String, LLVariable>,
-    pub lists: BTreeMap<String, LLList>,
-    pub broadcasts: BTreeMap<String, String>,
+    pub variables: HashMap<String, LLVariable>,
+    pub lists: HashMap<String, LLList>,
+    pub broadcasts: HashMap<String, String>,
 
     #[serde(serialize_with = "serialize_blocks")]
     pub blocks: Arena<LLBlock>,
@@ -73,7 +73,7 @@ fn serialize_blocks<S>(blocks: &Arena<LLBlock>, serializer: S) -> Result<S::Ok, 
 where
     S: Serializer,
 {
-    let ser_blocks: BTreeMap<String, LLBlock> = blocks
+    let ser_blocks: HashMap<String, LLBlock> = blocks
         .iter()
         .map(|(id, block)| (id_string(&id), block.clone()))
         .collect();

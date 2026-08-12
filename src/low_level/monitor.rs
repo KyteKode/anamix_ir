@@ -1,6 +1,6 @@
 use serde::Serialize;
 
-use std::collections::BTreeMap;
+use std::collections::HashMap;
 
 #[derive(Debug, Serialize)]
 #[serde(rename_all = "camelCase")]
@@ -8,7 +8,7 @@ pub struct LLMonitor {
     pub id: String,
     pub mode: String,
     pub opcode: String,
-    pub params: BTreeMap<String, String>,
+    pub params: HashMap<String, String>,
     pub sprite_name: Option<String>,
     pub value: MonitorData,
     pub width: f64,

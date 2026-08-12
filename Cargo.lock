@@ -16,6 +16,7 @@ dependencies = [
  "either",
  "hex",
  "id-arena",
+ "indexmap",
  "md5",
  "serde",
  "serde_json",

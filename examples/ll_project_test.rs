@@ -1,6 +1,6 @@
 use id_arena::Arena;
 
-use std::{collections::BTreeMap, path::PathBuf};
+use std::{collections::HashMap, path::PathBuf};
 
 use anamix_ir::low_level::{
     asset::{LLAsset, LLCostume},
@@ -15,9 +15,9 @@ fn main() {
 
         name: String::from("Target"),
 
-        variables: BTreeMap::new(),
-        lists: BTreeMap::new(),
-        broadcasts: BTreeMap::new(),
+        variables: HashMap::new(),
+        lists: HashMap::new(),
+        broadcasts: HashMap::new(),
 
         blocks: Arena::new(),
 
@@ -57,7 +57,7 @@ fn main() {
 
         name: String::from("Stage"),
 
-        variables: BTreeMap::from([(
+        variables: HashMap::from([(
             String::from("v01"),
             LLVariable(
                 String::from("stage var"),
@@ -65,8 +65,8 @@ fn main() {
                 false,
             ),
         )]),
-        lists: BTreeMap::new(),
-        broadcasts: BTreeMap::new(),
+        lists: HashMap::new(),
+        broadcasts: HashMap::new(),
 
         blocks: Arena::new(),
 
@@ -107,7 +107,7 @@ fn main() {
             id: String::from("v01"),
             mode: String::from("large"),
             opcode: String::from("data_variable"),
-            params: BTreeMap::from([
+            params: HashMap::from([
                 (String::from("VARIABLE"), String::from("stage var"))
             ]),
             sprite_name: None,

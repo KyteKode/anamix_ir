@@ -1,7 +1,7 @@
 use either::Either;
 use id_arena::Arena;
 
-use std::{collections::BTreeMap, path::PathBuf};
+use std::{collections::HashMap, path::PathBuf};
 
 use anamix_ir::low_level::{
     asset::{LLAsset, LLCostume},
@@ -18,8 +18,8 @@ fn main() {
         next: None,
         parent: None,
 
-        inputs: BTreeMap::new(),
-        fields: BTreeMap::new(),
+        inputs: HashMap::new(),
+        fields: HashMap::new(),
 
         shadow: false,
         top_level: true,
@@ -36,7 +36,7 @@ fn main() {
         next: None,
         parent: Some(green_flag),
 
-        inputs: BTreeMap::from([(
+        inputs: HashMap::from([(
             String::from("BROADCAST_INPUT"),
             LLInput(
                 1,
@@ -50,7 +50,7 @@ fn main() {
                 None,
             ),
         )]),
-        fields: BTreeMap::new(),
+        fields: HashMap::new(),
 
         shadow: false,
         top_level: false,
@@ -71,7 +71,7 @@ fn main() {
         next: None,
         parent: None,
 
-        inputs: BTreeMap::from([(
+        inputs: HashMap::from([(
             String::from("BROADCAST_INPUT"),
             LLInput(
                 1,
@@ -85,7 +85,7 @@ fn main() {
                 None,
             ),
         )]),
-        fields: BTreeMap::new(),
+        fields: HashMap::new(),
 
         shadow: false,
         top_level: true,
@@ -102,7 +102,7 @@ fn main() {
         next: None,
         parent: Some(when_recieved),
 
-        inputs: BTreeMap::from([(
+        inputs: HashMap::from([(
             String::from("MESSAGE"),
             LLInput(
                 3,
@@ -122,7 +122,7 @@ fn main() {
                 ))),
             ),
         )]),
-        fields: BTreeMap::new(),
+        fields: HashMap::new(),
 
         shadow: false,
         top_level: false,
@@ -143,8 +143,8 @@ fn main() {
         next: None,
         parent: Some(say),
 
-        inputs: BTreeMap::new(),
-        fields: BTreeMap::from([(
+        inputs: HashMap::new(),
+        fields: HashMap::from([(
             String::from("STOP_OPTION"),
             LLField(String::from("other scripts in sprite"), None),
         )]),
@@ -167,9 +167,9 @@ fn main() {
 
         name: String::from("LLTargetTest"),
 
-        variables: BTreeMap::new(),
-        lists: BTreeMap::new(),
-        broadcasts: BTreeMap::new(),
+        variables: HashMap::new(),
+        lists: HashMap::new(),
+        broadcasts: HashMap::new(),
 
         blocks,
 

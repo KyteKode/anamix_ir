@@ -3,7 +3,7 @@ use id_arena::Id;
 use serde::{Serialize, Serializer};
 
 use super::helper::{id_string, serialize_either};
-use std::collections::BTreeMap;
+use std::collections::HashMap;
 
 #[derive(Clone, Debug, Serialize)]
 #[serde(untagged)]
@@ -23,8 +23,8 @@ pub struct LLObjectBlock {
     #[serde(serialize_with = "serialize_optional_id")]
     pub parent: Option<Id<LLBlock>>,
 
-    pub inputs: BTreeMap<String, LLInput>,
-    pub fields: BTreeMap<String, LLField>,
+    pub inputs: HashMap<String, LLInput>,
+    pub fields: HashMap<String, LLField>,
 
     pub shadow: bool,
     pub top_level: bool,
@@ -36,7 +36,7 @@ pub struct LLObjectBlock {
     pub y: Option<f64>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
-    pub mutation: Option<BTreeMap<String, String>>,
+    pub mutation: Option<HashMap<String, String>>,
 }
 
 #[derive(Clone, Debug, Serialize)]
