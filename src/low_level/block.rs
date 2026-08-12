@@ -2,7 +2,7 @@ use either::Either;
 use id_arena::Id;
 use serde::{Serialize, Serializer};
 
-use super::helper::id_string;
+use super::helper::{id_string, serialize_either};
 use std::collections::BTreeMap;
 
 #[derive(Clone, Debug, Serialize)]
@@ -65,10 +65,7 @@ pub struct LLInput(
 );
 
 #[derive(Clone, Debug, Serialize)]
-pub struct LLField(
-    pub String,
-    pub Option<String>,
-);
+pub struct LLField(pub String, pub Option<String>);
 
 fn serialize_id<S>(id: &Id<LLBlock>, serializer: S) -> Result<S::Ok, S::Error>
 where
@@ -82,16 +79,4 @@ where
     S: Serializer,
 {
     id.map(|id| id_string(&id)).serialize(serializer)
-}
-
-fn serialize_either<S>(either: &Either<String, f64>, serializer: S) -> Result<S::Ok, S::Error>
-where
-    S: Serializer,
-{
-    if let Either::Left(data) = either {
-        return data.serialize(serializer);
-    } else if let Either::Right(data) = either {
-        return data.serialize(serializer);
-    }
-    unreachable!();
 }
